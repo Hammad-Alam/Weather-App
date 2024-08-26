@@ -220,7 +220,9 @@ function App() {
                 }}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className="w-full mt-2 p-2 border bg-gray-700 border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={`w-full mt-2 px-2 ${
+                  isFocused ? "pt-6 pb-2" : "py-2"
+                } border bg-gray-700 border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
               />
               {isEmpty && <p className="mt-4 text-red-400">{isEmpty}</p>}
             </div>
@@ -231,7 +233,7 @@ function App() {
               Search
             </button>
             {showWeatherDetails && (
-              <div className="mt-6 lg:space-y-4">
+              <div className="mt-2 lg:space-y-4">
                 <p>
                   <strong>NAME:</strong> {weatherData.countryName}
                 </p>
